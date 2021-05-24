@@ -1,0 +1,29 @@
+﻿@using FirstFrontToBack.Models;
+@using FirstFrontToBack.ViewModels;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model SliderImage
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Update Category</h4>
+                <form class="forms-sample" method="post">
+                    <div class="form-group">
+                        <label asp-for="Image">Image Name</label>
+                        <input asp-for="Image" class="form-control" accept="image/*" enctype="multipart/form-data" type="file">
+                        <span asp-validation-for="Photo" class="text-danger"></span>
+                    </div>
+                     
+
+
+                    <button type="submit" class="btn btn-warning mr-2">Update</button>
+                    <a asp-action="Index" class="btn btn-light">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

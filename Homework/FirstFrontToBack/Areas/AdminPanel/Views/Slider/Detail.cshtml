@@ -1,0 +1,25 @@
+﻿@using FirstFrontToBack.Models;
+@using FirstFrontToBack.ViewModels;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+@{
+    ViewData["Title"] = "Detail";
+    SliderImage sliderimage = Model;
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">@sliderimage.Image</h4>
+                <img src="~/img/@sliderimage.Image" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-primary">Go Back</a>
+</div>
+

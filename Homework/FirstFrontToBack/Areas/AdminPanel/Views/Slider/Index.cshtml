@@ -1,0 +1,47 @@
+﻿@using FirstFrontToBack.Models;
+@using FirstFrontToBack.ViewModels;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+@{
+    ViewData["Title"] = "Index";
+     
+    List<SliderImage> sliderimages= Model;
+}
+
+<div class="row">
+
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Slider Images</h4>
+                <a asp-action="Create"  class="btn btn-primary">Create</a>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Actions.</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var images in sliderimages)
+                            {
+                                <tr>
+                                    <td><img src="~/img/@images.Image" style="width:150px !important; height:150px !important" /></td>
+                                    <td>
+                                        <a asp-action="Detail" asp-route-id="@images.Id" class="btn btn-success">Detail</a>
+                                        <a asp-action="Update" asp-route-id="@images.Id" class="btn btn-warning">Update</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
